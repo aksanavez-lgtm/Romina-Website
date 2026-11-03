@@ -1,0 +1,50 @@
+.section {
+  background: var(--rose);
+  color: var(--ink);
+  padding-block: clamp(4.5rem, 6vw, 7.5rem);
+}
+
+.layout {
+  width: min(100% - var(--gutter) * 2, 1320px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .65fr);
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.intro { padding-top: clamp(1.5rem, 2.5vw, 3rem); }
+.overline { font-size: .7rem; font-weight: 500; text-transform: uppercase; letter-spacing: .17em; }
+.headline { margin-block: 1.6rem 2rem; font-size: var(--heading); line-height: 1.14; letter-spacing: -.045em; text-wrap: initial; }
+.headline em { white-space: nowrap; }
+.contacts { border-top: 1px solid color-mix(in srgb, var(--ink) 30%, transparent); padding-top: clamp(3rem, 4vw, 4.5rem); display: grid; gap: .7rem; }
+.contacts a { display: flex; align-items: center; gap: clamp(.8rem, 1.4vw, 1.5rem); font-family: var(--font-serif), Georgia, serif; font-size: clamp(.95rem, 1vw, 1.15rem); }
+.contacts a:hover span:last-child { text-decoration: underline; }
+.contacts a span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.icon { display: grid; place-items: center; width: 40px; aspect-ratio: 1; flex-shrink: 0; border: 1px solid currentColor; border-radius: 50%; }
+.icon svg { width: 52%; }
+.artwork { min-width: 0; min-height: calc(clamp(2.1rem, 2.52vw, 2.88rem) + 32.2rem); border-left: 1px solid color-mix(in srgb, var(--ink) 30%, transparent); padding-left: clamp(1.5rem, 3vw, 3rem); display: flex; align-items: center; justify-content: center; }
+.graphic { display: block; width: 100%; height: auto; cursor: pointer; scale: 1; transform-origin: center; transition: scale 300ms ease-out; }
+.graphic:hover { scale: 1.2; }
+.brain, .arrow { position: relative; overflow: hidden; }
+.brain { aspect-ratio: 1672 / 600; }
+.arrow { aspect-ratio: 1672 / 341; margin-top: 1.5rem; }
+.brain img, .arrow img { position: absolute; width: 100%; height: auto; left: 0; }
+.brain img { top: 0; }
+.arrow img { bottom: 0; }
+
+@media (min-width: 1001px) {
+  .graphic { transform: translateX(2.7vw) scale(1.5); }
+}
+
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .intro { padding-top: 0; }
+  .headline { font-size: var(--heading); }
+  .artwork { padding: 2rem 0 0; border-left: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 30%, transparent); }
+}
+
+@media (max-width: 480px) {
+  .headline { font-size: clamp(2rem, 8vw, 2.6rem); margin-block: 2rem; }
+  .headline em { white-space: normal; }
+  .contacts a { font-size: .95rem; gap: .8rem; }
+}

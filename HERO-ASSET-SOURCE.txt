@@ -1,0 +1,11 @@
+Homepage V1 – Hintergrundbild
+
+Asset: hero-landschaft.png
+Quelle: /Users/aksanavz/Documents/8f06a9a6-ff0f-4209-9da5-1fdd7830fb7b.png
+Bearbeitung: integriertes imagegen-Werkzeug, 18.09.2026.
+Aus dem gelieferten Entwurf rekonstruiertes dekoratives Landschaftsmotiv.
+Kein authentisches Foto von Romina. Keine Darstellung als Romina.
+Text und Header wurden entfernt; verdeckte Bildbereiche wurden rekonstruiert.
+
+Verwendeter Prompt:
+Use case: precise-object-edit. Edit target: attached website reference. Extract ONLY the hero background photograph as a standalone wide image, aspect ratio 1672:771. Remove the entire top website header (top 170 pixels of the 1672x941 reference), remove ALL headline/body text and the orange button from the remaining hero. Reconstruct the covered areas with their warm ivory background / faint lake landscape. Preserve the original woman viewed from behind on the right, bun hairstyle, knitted sweater, position, scale, lake, mountain ridges, warm sunset lighting, right-side plants and very light soft left-side fade as closely as possible. This is cleanup of the provided image, not a redesign. No text, no letters, no logo, no interface elements, no border. Output only the landscape hero photo with the left half fading into warm near-white, as in the source.
