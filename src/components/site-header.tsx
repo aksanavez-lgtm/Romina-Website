@@ -15,8 +15,8 @@ const signature = localFont({
 const navigation = [
   ["Home", "#start"],
   ["Über mich", "#ueber-mich"],
-  ["Therapie", "#therapie"],
   ["Themen", "#themen"],
+  ["Therapie", "#therapie"],
   ["Kontakt", "/kontakt"],
 ] as const;
 
@@ -76,8 +76,8 @@ export function SiteHeader() {
           <span className={styles.descriptor} aria-hidden="true">Psychotherapie</span>
         </a>
         <div className={styles.navigationRow}>
-          <button ref={toggle} className={styles.menuToggle} type="button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
-            {open ? "Schließen" : "Menü"}
+          <button ref={toggle} className={styles.menuToggle} type="button" aria-label={open ? "Menü schließen" : "Menü öffnen"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
+            <span className={styles.menuLabel}>{open ? "Schließen" : "Menü"}</span>
             <span className={`${styles.menuIcon} ${open ? styles.menuIconOpen : ""}`} aria-hidden="true"><i /><i /></span>
           </button>
           <nav id="main-navigation" aria-label="Hauptnavigation" className={`${styles.navigation} ${open ? styles.navigationOpen : ""}`}>

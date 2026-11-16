@@ -69,7 +69,7 @@ export default function Home() {
                   <p>Während meines Studiums der Kultur- und Sozialanthropologie suchte ich Antworten auf diese Fragen in unterschiedlichen Kulturen und Lebenswelten. Heute setze ich dieses Interesse im Rahmen der Psychotherapie fort. Dabei verbinde ich meine Neugier auf individuelle Lebensgeschichten mit einem fundierten therapeutischen Methodenrepertoire, um Menschen auf ihrem persönlichen Weg zu begleiten.</p>
                 </div>
               </details>
-              <details className="about-details">
+              <details className="about-details" id="mehr-ueber-mich">
                 <summary>Mehr über mich <span aria-hidden="true">+</span></summary>
                 <div className="about-background">
                   <section aria-labelledby="ausbildungen-title">
@@ -111,7 +111,7 @@ export default function Home() {
                 "In meinen Praxen in Wien und Mödling stehen Vertrauen, Offenheit und Verständnis im Mittelpunkt.",
                 "Einfühlungsvermögen und Wertschätzung bilden die Grundlage meiner personzentrierten psychotherapeutischen Arbeit.",
               ],
-              link: { label: "Mehr über mich", href: "#ueber-mich" },
+              link: { label: "Mehr über mich", href: "#mehr-ueber-mich" },
             },
             {
               title: "Gemeinsame Begegnung",
