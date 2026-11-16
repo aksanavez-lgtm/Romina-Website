@@ -41,10 +41,10 @@ Für `npm start` vorher den Entwicklungsserver stoppen. Auf einem neuen Rechner 
 - `public/images/`: zwei echte Fotos von Rominas bestehender Website.
 - `CONTENT-SOURCES.md`: Quellen, Bildauswahl und noch offene Inhalte.
 
-Schriften und Fotos werden lokal ausgeliefert. Alle Seiten werden beim Build statisch vorgerendert. Nur das mobile Menü benötigt einen kleinen eigenen Client-Baustein.
+Schriften und Fotos werden lokal ausgeliefert. Alle Seiten werden beim Build statisch vorgerendert. Das mobile Menü und die Platzhalter-Meldung des Kontaktformulars nutzen kleine Client-Bausteine.
 
 ## Aktueller Stand
 
-Homepage, Kontaktseite und sechs Therapieseiten sind umgesetzt. E-Mail- und Telefonlinks sind funktional. Das frühere Kontaktformular ohne Versandfunktion wurde entfernt. Für die Veröffentlichung müssen die rechtlichen Angaben gemäß `LEGAL-REVIEW.md` mit den tatsächlichen Praxis- und Hostingdaten abgeglichen werden.
+Homepage, Kontaktseite und sechs Therapieseiten sind umgesetzt. E-Mail- und Telefonlinks sind funktional. Das Kontaktformular ist als Vorschau wiederhergestellt; es versendet oder speichert derzeit keine Nachrichten und zeigt nach dem Absenden einen entsprechenden Hinweis. Für die Veröffentlichung müssen die rechtlichen Angaben gemäß `LEGAL-REVIEW.md` mit den tatsächlichen Praxis- und Hostingdaten abgeglichen werden.
 
 Keine Veröffentlichung vorgenommen.
