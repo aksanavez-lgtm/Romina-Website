@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="de-AT" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="de-AT" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(practitioner).replace(/</g, "\\u003c") }} /><SiteHeader />{children}</body>
     </html>
   );
