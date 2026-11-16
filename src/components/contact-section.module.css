@@ -2,6 +2,7 @@
   background: var(--rose);
   color: var(--ink);
   padding-block: clamp(4.5rem, 6vw, 7.5rem);
+  overflow-x: clip;
 }
 
 .layout {

@@ -201,6 +201,7 @@
     .hero-art { top: 7.5rem; height: calc(100% - 13rem); }
     .hero-actions { gap: .6rem 1.2rem; }
     .intro-grid { grid-template-columns: 1fr 3fr; gap: 2rem; }
+    .intro h2, .topics-heading h2 { width: 100%; }
     .intro-symbol { display: none; }
     .about-grid { gap: 3rem; }
     .therapy { gap: 3rem; }
@@ -231,16 +232,14 @@
     .hero-bottom a { gap: .6rem; }
     .intro-grid { grid-template-columns: 1fr; gap: 1.8rem; }
     .intro-grid > .eyebrow { max-width: none; padding: 0; height: 1.056rem; }
-    .intro h2, .topics-heading h2 { font-size: clamp(2.31rem, 8.25vw, 3.85rem); line-height: clamp(2.394rem, 8.55vw, 3.99rem); width: calc(100% + 1rem); }
+    .intro h2, .topics-heading h2 { font-size: clamp(2.31rem, 8.25vw, 3.85rem); line-height: clamp(2.394rem, 8.55vw, 3.99rem); }
     .intro-text { margin-top: 1.5rem; }
     .section-heading, .locations-heading { display: block; }
     .section-heading h2, .locations-heading h2 { margin-block: 1.5rem; }
     .section-heading h2 { font-size: clamp(2.2rem, 7vw, 3.5rem); }
-    .topics-grid { grid-template-columns: 1fr; gap: 0; }
-    .topic { margin: 0; padding: 2rem; }
+    .topics-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .topic { min-width: 0; margin: 0; padding: 2rem; }
     .topic h3 { font-size: 2.2rem; }
-    .topic-sage { margin-left: 1.2rem; }
-    .topic-blue { margin-right: 1.2rem; }
     .topics-after { flex-direction: column; align-items: start; gap: 1rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.6rem; }
     .portrait { width: 90%; }
