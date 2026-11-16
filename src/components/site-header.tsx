@@ -13,7 +13,7 @@ const signature = localFont({
 });
 
 const navigation = [
-  ["Start", "#start"],
+  ["Home", "#start"],
   ["Über mich", "#ueber-mich"],
   ["Therapie", "#therapie"],
   ["Themen", "#themen"],

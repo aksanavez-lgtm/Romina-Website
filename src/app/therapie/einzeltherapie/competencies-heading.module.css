@@ -1,0 +1,43 @@
+.section {
+  position: relative;
+  background: var(--rose);
+  color: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr .5fr;
+  gap: 3rem;
+}
+
+.label {
+  padding-top: .7rem;
+  font-size: .77418rem;
+  line-height: 1.584rem;
+  letter-spacing: .1122rem;
+}
+
+.title {
+  font-size: clamp(2.75rem, 4.4vw, 4.4rem);
+  letter-spacing: -0.027em;
+  line-height: clamp(3.42rem, 5.472vw, 5.472rem);
+  width: 110%;
+}
+
+.title em {
+  color: var(--terracotta);
+}
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: 1fr 3fr; gap: 2rem; }
+}
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  .label { padding-top: 0; }
+  .title {
+    font-size: clamp(2.31rem, 8.25vw, 3.85rem);
+    line-height: clamp(2.8728rem, 10.26vw, 4.788rem);
+    width: 100%;
+  }
+}

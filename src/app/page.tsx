@@ -7,13 +7,13 @@ import { Arrow, TextLink } from "@/components/design-elements";
 import landscapePhoto from "../../public/images/hero-landschaft.png";
 import therapyThread from "../../public/images/therapie-faden.png";
 import heroStyles from "./hero.module.css";
-import portraitPhoto from "../../public/images/romina-ueber-mich.jpg";
+import portraitPhoto from "../../Romina_Foto-Uber-mich.png";
 
 const topics = [
-  { number: "01", title: <>Trauma & psychische<br />Belastungen</>, className: "topic-rose", items: ["Ängste & Panikattacken", "Depressionen & bipolare Störungen", "Posttraumatische Belastungsstörungen", "Zwänge, Ess- & Schlafstörungen"] },
-  { number: "02", title: <>Beziehung<br />& Familie</>, className: "topic-sage", items: ["Paartherapie", "Familientherapie"] },
-  { number: "03", title: <>Krisen<br />& Verlust</>, className: "topic-blue", items: ["Lebenskrisen & Burnout", "Trauerbewältigung", "Sterbebegleitung"], note: "Auch suizidale Gedanken können in der Therapie angesprochen werden. Die Praxis ist kein Krisendienst." },
-  { number: "04", title: <>Entwicklung<br />& Sinn</>, className: "topic-sand", items: ["Sinnfindung & Spiritualität", "Selbsterfahrung für das Propädeutikum"] },
+  { number: "01", label: "TRAUMA", title: <>Trauma & psychische<br />Belastungen</>, className: "topic-rose", items: ["Ängste & Panikattacken", "Depressionen & bipolare Störungen", "Posttraumatische Belastungsstörungen", "Zwänge, Ess- & Schlafstörungen"] },
+  { number: "02", label: "BEZIEHUNG", title: <>Beziehung<br />& Familie</>, className: "topic-sage", items: ["Paartherapie", "Familientherapie"] },
+  { number: "03", label: "KRISEN", title: <>Krisen<br />& Verlust</>, className: "topic-blue", items: ["Lebenskrisen & Burnout", "Trauerbewältigung", "Sterbebegleitung"], note: "Auch suizidale Gedanken können in der Therapie angesprochen werden. Die Praxis ist kein Krisendienst." },
+  { number: "04", label: "ENTWICKLUNG", title: <>Entwicklung<br />& Sinn</>, className: "topic-sand", items: ["Sinnfindung & Spiritualität", "Selbsterfahrung für das Propädeutikum"] },
 ];
 
 const therapies = [
@@ -53,12 +53,12 @@ export default function Home() {
         <section className="about section" id="ueber-mich" tabIndex={-1} aria-labelledby="about-title">
           <div className="container about-grid">
             <figure className="portrait">
-              <div className="portrait-image"><Image src={portraitPhoto} alt="Portrait von Mag. Romina Lauzensky." fill placeholder="blur" sizes="(max-width: 760px) 90vw, (max-width: 1600px) 42vw, 600px" className="portrait-photo" /></div>
+              <div className="portrait-image"><Image src={portraitPhoto} unoptimized alt="Portrait von Mag. Romina Lauzensky." fill placeholder="blur" sizes="(max-width: 760px) 90vw, (max-width: 1600px) 42vw, 600px" className="portrait-photo" /></div>
               <figcaption><span>Mag. Romina Lauzensky</span><span>Psychotherapie · Wien & Mödling</span></figcaption>
             </figure>
             <div className="about-copy">
               <p className="eyebrow">Der Mensch hinter der Begegnung</p>
-              <h2 id="about-title">Therapie beginnt<br />mit <em>Begegnung.</em></h2>
+              <h2 id="about-title">Therapie beginnt<br />mit <em style={{ color: "#256e5d" }}>Begegnung.</em></h2>
               <p className="body-large">Was bewegt einen Menschen? Was gibt seinem Leben Sinn? Und was verbindet uns miteinander?</p>
               <p>Diese Fragen begleiten mich von meinem Studium der Kultur- und Sozialanthropologie bis in meine psychotherapeutische Arbeit. In meinen Praxen in Wien und Mödling stehen Vertrauen, Offenheit und Verständnis im Mittelpunkt.</p>
               <details className="about-read-more">
@@ -163,7 +163,7 @@ export default function Home() {
           <div className="topics-grid container">
             {topics.map((topic) => (
               <article className={`topic ${topic.className}`} key={topic.number}>
-                <span className="eyebrow topic-number">{topic.number} / Themenfelder</span>
+                <span className="eyebrow topic-number">{topic.number} / {topic.label}</span>
                 <h3>{topic.title}</h3>
                 <ul>{topic.items.map(item => <li key={item}>{item}</li>)}</ul>
                 {topic.note && <p className="topic-note">{topic.note}</p>}

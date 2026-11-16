@@ -1,0 +1,10 @@
+.section { background: var(--paper); padding-bottom: calc(var(--section-space) * .75); }
+.grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 3.6vw, 4rem); align-items: start; }
+.grid > * { min-width: 0; }
+.photo { display: block; width: 100%; height: auto; aspect-ratio: 800 / 695; object-fit: cover; border-radius: 20px; }
+.highlight { color: #256e5d; }
+.highlight em { font-style: normal; }
+.section .highlight + p { margin-bottom: .56rem; }
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; gap: 2.6rem; }
+}
