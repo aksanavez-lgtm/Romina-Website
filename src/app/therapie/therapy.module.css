@@ -1,2 +1,13 @@
 .page { min-height: 55vh; background: var(--sand); padding-block: clamp(3rem, 7vw, 7rem); }
-.page h1 { max-width: 1100px; font-size: clamp(2rem, 4.5vw, 4.5rem); line-height: 1.15; overflow-wrap: break-word; }
+.inner { max-width: 900px; }
+.eyebrow { color: var(--clay-ink); font-size: .75rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 500; }
+.page h1 { max-width: 1100px; font-size: clamp(2.4rem, 5vw, 5rem); line-height: 1.12; overflow-wrap: break-word; margin-block: 1rem 1.8rem; }
+.lead { font-family: var(--font-serif), Georgia, serif; font-size: clamp(1.35rem, 2.2vw, 1.85rem); line-height: 1.45; max-width: 760px; }
+.sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); margin-block: clamp(3rem, 7vw, 6rem); padding-top: 2rem; border-top: 1px solid var(--line); }
+.sections h2 { font-size: clamp(1.6rem, 2.7vw, 2.25rem); margin-bottom: 1.2rem; }
+.sections p + p { margin-top: 1rem; }
+.contact { border-top: 1px solid var(--line); padding-top: 2rem; }
+.contact h2 { font-size: clamp(1.6rem, 2.7vw, 2.25rem); }
+.contact p { margin-block: .8rem 1.4rem; }
+.contact a { display: inline-flex; align-items: center; min-height: 48px; padding: .75rem 1.3rem; background: var(--clay-ink); color: var(--paper); }
+@media (max-width: 700px) { .sections { grid-template-columns: 1fr; } }

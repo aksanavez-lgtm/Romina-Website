@@ -4,17 +4,17 @@ import { Competencies } from "./competencies";
 import Image from "next/image";
 import { SiteFooter } from "@/components/site-footer";
 import background from "../../../../public/images/einzeltherapie-hero.png";
-import room from "../../../../Romina-Lauzensky_Einzeltherapie-Raum-für-dich.png";
+import room from "../../../../public/images/einzeltherapie-raum.webp";
 import sectionStyles from "./benefits.module.css";
 import styles from "./hero.module.css";
 import { CenteredHeroText } from "./centered-hero-text";
 
-export const metadata = { title: "Einzeltherapie | Mag. Romina Lauzensky" };
+export const metadata = { title: "Einzeltherapie | Mag. Romina Lauzensky", description: "Einzeltherapie bei Mag. Romina Lauzensky in Wien und Mödling. Personzentrierte Begleitung für persönliche Anliegen und belastende Lebensphasen.", alternates: { canonical: "/therapie/einzeltherapie" }, openGraph: { title: "Einzeltherapie | Mag. Romina Lauzensky", description: "Personzentrierte Einzeltherapie in Wien und Mödling.", url: "/therapie/einzeltherapie" } };
 
 export default function TherapyPage() {
   return <><main id="inhalt" tabIndex={-1}>
     <section className={styles.hero} aria-labelledby="einzeltherapie-title">
-      <Image src={background} alt="" fill preload unoptimized className={styles.background} />
+      <Image src={background} alt="" fill preload sizes="100vw" className={styles.background} />
       <div className={styles.copy}>
         <CenteredHeroText>
         <h1 id="einzeltherapie-title">Einzeltherapie</h1>
@@ -26,7 +26,7 @@ export default function TherapyPage() {
     </section>
     <section className={`section ${sectionStyles.section}`} aria-labelledby="benefits-title">
       <div className={`container ${sectionStyles.grid}`}>
-        <Image src={room} alt="Ordinationsraum für Einzeltherapie" unoptimized className={sectionStyles.photo} />
+        <Image src={room} alt="Ordinationsraum für Einzeltherapie" sizes="(max-width: 760px) 100vw, 50vw" className={sectionStyles.photo} />
         <div className="about-copy">
           <p className="eyebrow">IM MITTELPUNKT</p>
           <h2 id="benefits-title">Was Einzeltherapie <em>bietet.</em></h2>

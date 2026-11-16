@@ -8,6 +8,7 @@ import landscapePhoto from "../../public/images/hero-landschaft.png";
 import therapyThread from "../../public/images/therapie-faden.png";
 import heroStyles from "./hero.module.css";
 import portraitPhoto from "../../Romina_Foto-Uber-mich.png";
+import { therapyNavigation } from "@/components/therapy-navigation";
 
 const topics = [
   { number: "01", label: "TRAUMA", title: <>Trauma & psychische<br />Belastungen</>, className: "topic-rose", items: ["Ängste & Panikattacken", "Depressionen & bipolare Störungen", "Posttraumatische Belastungsstörungen", "Zwänge, Ess- & Schlafstörungen"] },
@@ -53,7 +54,7 @@ export default function Home() {
         <section className="about section" id="ueber-mich" tabIndex={-1} aria-labelledby="about-title">
           <div className="container about-grid">
             <figure className="portrait">
-              <div className="portrait-image"><Image src={portraitPhoto} unoptimized alt="Portrait von Mag. Romina Lauzensky." fill placeholder="blur" sizes="(max-width: 760px) 90vw, (max-width: 1600px) 42vw, 600px" className="portrait-photo" /></div>
+              <div className="portrait-image"><Image src={portraitPhoto} alt="Portrait von Mag. Romina Lauzensky." fill placeholder="blur" sizes="(max-width: 760px) 90vw, (max-width: 1600px) 42vw, 600px" className="portrait-photo" /></div>
               <figcaption><span>Mag. Romina Lauzensky</span><span>Psychotherapie · Wien & Mödling</span></figcaption>
             </figure>
             <div className="about-copy">
@@ -62,7 +63,7 @@ export default function Home() {
               <p className="body-large">Was bewegt einen Menschen? Was gibt seinem Leben Sinn? Und was verbindet uns miteinander?</p>
               <p>Diese Fragen begleiten mich von meinem Studium der Kultur- und Sozialanthropologie bis in meine psychotherapeutische Arbeit. In meinen Praxen in Wien und Mödling stehen Vertrauen, Offenheit und Verständnis im Mittelpunkt.</p>
               <details className="about-read-more">
-                <summary className="text-link"><Image className="read-more-label read-more-image" src="/weiter-lesen.png" alt="Weiter lesen" width={2172} height={724} unoptimized /><span className="read-less-label">weniger lesen<Arrow /></span></summary>
+                <summary className="text-link"><Image className="read-more-label read-more-image" src="/weiter-lesen-small.webp" alt="Weiter lesen" width={600} height={200} /><span className="read-less-label">weniger lesen<Arrow /></span></summary>
                 <div>
                   <p>Schon lange beschäftigt mich die Frage, was Menschen in ihrem Leben Orientierung gibt: Welchen Sinn sie darin finden, was sie mit anderen verbindet und wie sich die Vielfalt menschlicher Lebensentwürfe gestaltet.</p>
                   <p>Während meines Studiums der Kultur- und Sozialanthropologie suchte ich Antworten auf diese Fragen in unterschiedlichen Kulturen und Lebenswelten. Heute setze ich dieses Interesse im Rahmen der Psychotherapie fort. Dabei verbinde ich meine Neugier auf individuelle Lebensgeschichten mit einem fundierten therapeutischen Methodenrepertoire, um Menschen auf ihrem persönlichen Weg zu begleiten.</p>
@@ -149,10 +150,8 @@ export default function Home() {
             </div>
           </div>
           <div className="therapy-list">
-            {therapies.map((therapy, index) => index === 0 ? (
-              <a className="therapy-row" key={therapy.name} href="/therapie/einzeltherapie"><span className="eyebrow">0{index + 1}</span><div><h3>{therapy.name}</h3><p>{therapy.text}</p></div></a>
-            ) : (
-              <article className="therapy-row" key={therapy.name}><span className="eyebrow">0{index + 1}</span><div><h3>{therapy.name}</h3><p>{therapy.text}</p></div></article>
+            {therapies.map((therapy, index) => (
+              <a className="therapy-row" key={therapy.name} href={`/therapie/${therapyNavigation[index].slug}`}><span className="eyebrow">0{index + 1}</span><div><h3>{therapy.name}</h3><p>{therapy.text}</p></div></a>
             ))}
             <div className="therapy-extra"><TextLink href="#kontakt">Zum Angebot anfragen</TextLink></div>
           </div>

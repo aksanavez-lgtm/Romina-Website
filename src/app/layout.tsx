@@ -3,6 +3,21 @@ import type { ReactNode } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
+import { siteUrl } from "@/lib/site";
+
+const practitioner = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Mag. Romina Lauzensky",
+  jobTitle: "Psychotherapeutin",
+  url: siteUrl.toString(),
+  email: "praxis@psychotherapie-lauzensky.at",
+  telephone: "+4368184087022",
+  workLocation: [
+    { "@type": "Place", address: { "@type": "PostalAddress", streetAddress: "Mollardgasse 34/2/40-41", postalCode: "1060", addressLocality: "Wien", addressCountry: "AT" } },
+    { "@type": "Place", address: { "@type": "PostalAddress", streetAddress: "Klostergasse 19/5", postalCode: "2340", addressLocality: "Mödling", addressCountry: "AT" } },
+  ],
+};
 
 const inter = localFont({
   src: [
@@ -23,6 +38,7 @@ const playfair = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: "Mag. Romina Lauzensky | Psychotherapie Wien & Mödling",
   description:
     "Psychotherapie bei Mag. Romina Lauzensky in Wien und Mödling. Einzeltherapie, Paartherapie, Familientherapie und Traumapsychotherapie. Kontakt und Standorte.",
@@ -32,12 +48,13 @@ export const metadata: Metadata = {
     locale: "de_AT",
     type: "website",
   },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="de-AT" className={`${inter.variable} ${playfair.variable}`}>
-      <body><SiteHeader />{children}</body>
+      <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(practitioner).replace(/</g, "\\u003c") }} /><SiteHeader />{children}</body>
     </html>
   );
 }
