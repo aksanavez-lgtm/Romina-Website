@@ -224,6 +224,13 @@
 .navigation .therapyDropdown a::after { display: none; }
 @media (max-width: 1200px) {
   .therapyMenu { width: 100%; }
-  .therapyTrigger { width: 100%; font-size: 1.15rem; padding-inline: .5rem; border-bottom: 1px solid var(--line); }
-  .therapyDropdown { position: static; width: 100%; border: 0; border-left: 1px solid var(--line); }
+  .therapyTrigger { width: 100%; justify-content: space-between; font-size: 1.15rem; padding-inline: .5rem; border-bottom: 1px solid var(--line); }
+  .therapyTrigger::after { content: ""; width: .55rem; height: .55rem; margin-right: .35rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-.15rem) rotate(45deg); transition: transform 180ms ease; }
+  .therapyMenu[open] .therapyTrigger::after { transform: translateY(.15rem) rotate(225deg); }
+  .therapyDropdown { position: static; width: 100%; max-height: none; overflow: visible; margin: .6rem 0 .8rem; padding: .3rem .9rem; background: var(--sand); border: 1px solid var(--rose); border-radius: 8px; }
+  .therapyDropdown li + li { border-top-color: var(--rose); }
+  .navigation .therapyDropdown a { min-height: 48px; padding: .7rem 0; border: 0; font-size: 1rem; line-height: 1.45; }
+  .navigation .therapyDropdown a:hover,
+  .navigation .therapyDropdown a[aria-current] { color: var(--clay-ink); }
+  .navigation .therapyDropdown a:focus-visible { outline-offset: -3px; }
 }
