@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
+    "test": "node --test tests/contact-email.test.mjs",
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit"

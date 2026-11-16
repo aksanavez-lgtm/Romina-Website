@@ -23,6 +23,7 @@
 .formSide { min-width: 0; padding: 2rem 3rem 2rem max(var(--gutter), calc((100vw - 1320px) / 2)); }
 .form { min-width: 0; display: grid; gap: .6rem; }
 .form h2 { font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -.05em; margin-bottom: .4rem; }
+.formNote { font-size: .85rem; line-height: 1.5; margin-bottom: .4rem; }
 .form label { display: block; min-width: 0; }
 .names { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
 .form input:not([type=checkbox]), .form textarea { width: 100%; min-width: 0; border: 1px solid transparent; border-radius: 0; padding: .8rem; background: var(--paper); color: var(--ink); font: inherit; font-size: .85rem; line-height: 1.5; min-height: 44px; }
@@ -32,7 +33,17 @@
 .consent input { width: 1rem; height: 1rem; margin: .1rem 0 0; accent-color: var(--clay-ink); flex-shrink: 0; }
 .consent a { text-decoration: underline; }
 .form button { justify-self: start; border: 0; border-radius: 100px; padding: .7rem 1.8rem; min-height: 44px; background: var(--clay-ink); color: var(--sand); font: inherit; font-size: .85rem; cursor: pointer; }
-.notice { font-size: var(--font-size-body); }
+.form button:disabled { cursor: wait; opacity: .7; }
+.notice { position: fixed; z-index: 200; left: 50%; bottom: calc(1.25rem + 60px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(35rem, calc(100vw - 2rem)); display: grid; grid-template-columns: minmax(0, 1fr) 44px; align-items: start; gap: .65rem; padding: 1.1rem 1.1rem 1.1rem 1.4rem; border-radius: 14px; background: var(--paper); color: var(--ink); box-shadow: 0 12px 36px rgba(46, 46, 46, .2); font-size: .95rem; line-height: 1.5; animation: noticeEnter 220ms ease-out both; }
+.noticeError { background: var(--rose); }
+.notice p { margin: 0; }
+.notice a { color: var(--clay-ink); text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+.noticeError a { color: var(--ink); }
+.form .noticeClose { width: 44px; height: 44px; min-height: 44px; display: grid; place-items: center; justify-self: end; margin: -.45rem -.45rem 0 0; padding: 0; border-radius: 50%; background: transparent; color: var(--ink); }
+.noticeClose svg { width: 18px; height: 18px; }
+.form .noticeClose:hover { background: var(--sand); }
+@keyframes noticeEnter { from { opacity: .65; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.form input.honeypot { position: absolute; width: 1px; min-width: 1px; height: 1px; min-height: 0; padding: 0; border: 0; clip-path: inset(50%); opacity: 0; pointer-events: none; }
 .photo { min-width: 0; position: relative; min-height: 100%; }
 .photo img { object-fit: contain; object-position: center; }
 .locations { padding-block: 2rem 2.5rem; }
@@ -102,4 +113,6 @@
   .info > div:first-child { border-bottom: 1px solid var(--line); }
   .info > div:last-child { border-bottom: 0; }
   .names { grid-template-columns: 1fr; }
+  .notice { bottom: calc(.75rem + 60px + env(safe-area-inset-bottom)); width: calc(100vw - 1.5rem); padding: .9rem .8rem .9rem 1rem; }
 }
+@media(prefers-reduced-motion: reduce) { .notice { animation: none; } }

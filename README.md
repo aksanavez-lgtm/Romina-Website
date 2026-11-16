@@ -45,6 +45,21 @@ Schriften und Fotos werden lokal ausgeliefert. Alle Seiten werden beim Build sta
 
 ## Aktueller Stand
 
-Homepage, Kontaktseite und sechs Therapieseiten sind umgesetzt. E-Mail- und Telefonlinks sind funktional. Das Kontaktformular ist als Vorschau wiederhergestellt; es versendet oder speichert derzeit keine Nachrichten und zeigt nach dem Absenden einen entsprechenden Hinweis. Für die Veröffentlichung müssen die rechtlichen Angaben gemäß `LEGAL-REVIEW.md` mit den tatsächlichen Praxis- und Hostingdaten abgeglichen werden.
+Homepage, Kontaktseite und sechs Therapieseiten sind umgesetzt. E-Mail- und Telefonlinks sind funktional. Das Kontaktformular sendet über die Brevo Transactional Email API an `praxis@psychotherapie-lauzensky.at`, sobald `BREVO_API_KEY` gesetzt und die Absenderadresse bei Brevo verifiziert ist. Ohne gültige Konfiguration oder bei einem Versandfehler zeigt es Telefonnummer und E-Mail-Adresse als Alternative an. Für die Veröffentlichung müssen die rechtlichen Angaben gemäß `LEGAL-REVIEW.md` mit den tatsächlichen Praxis- und Hostingdaten abgeglichen werden.
+
+### Kontaktformular aktivieren
+
+1. Bei Brevo ein Konto für die Praxis anlegen und `praxis@psychotherapie-lauzensky.at` als Absender verifizieren. Die Domainauthentifizierung gemäß Brevo einrichten.
+2. In Brevo unten links **Settings → SMTP & API → API Keys & MCP → Generate API key** öffnen. Einen Namen wie `Romina Website Kontaktformular` vergeben. **Restricted** wählen, für **Transactional email** die Berechtigung **All** setzen und alle anderen Bereiche auf **None** lassen. Den Schlüssel sofort kopieren; Brevo zeigt ihn nur einmal. Einen **API key**, keinen **SMTP key**, verwenden. Lokal in `.env.local` speichern:
+
+   ```text
+   BREVO_API_KEY=hier-den-schluessel-eintragen
+   ```
+
+3. Dieselbe Umgebungsvariable beim Hosting-Anbieter als geheimes Server-Environment-Variable hinterlegen und die Website neu bereitstellen. Der Schlüssel darf nicht mit `NEXT_PUBLIC_` beginnen und nicht ins Repository eingecheckt werden.
+4. Nach der Einrichtung eine echte Testnachricht senden und den Eingang im Praxispostfach prüfen. Die API-Bestätigung allein belegt noch keine Zustellung.
+5. In Brevo unter **Settings → Transactional emails → Retention rules** die E-Mail-Vorschau auf **Never store previews** und die Log-Aufbewahrung auf **1 month** setzen, wenn keine längere Aufbewahrung benötigt wird.
+
+Das Formular benötigt einen Next.js-Server oder eine Plattform mit Serverfunktionen. Reines statisches Hosting kann `/api/contact` nicht ausführen. Vor der Veröffentlichung Brevos Auftragsverarbeitungsvereinbarung und die Datenschutzerklärung mit der Praxis prüfen.
 
 Keine Veröffentlichung vorgenommen.
