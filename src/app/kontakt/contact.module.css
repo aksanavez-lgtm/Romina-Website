@@ -46,7 +46,7 @@
 .form input.honeypot { position: absolute; width: 1px; min-width: 1px; height: 1px; min-height: 0; padding: 0; border: 0; clip-path: inset(50%); opacity: 0; pointer-events: none; }
 .photo { min-width: 0; position: relative; min-height: 100%; }
 .photo img { object-fit: contain; object-position: center; }
-.locations { padding-block: 2rem 2.5rem; }
+.locations { padding-block: 4.5rem; }
 .locationGrid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 1.5rem; }
 .location { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 1.5rem; padding-right: 2rem; min-width: 0; }
 .location + .location { border-left: 1px solid var(--line); padding-right: 0; padding-left: 2rem; }
@@ -60,7 +60,7 @@
 .crisisHeading { display: flex; align-items: center; gap: 1.5rem; }
 .crisisHeading .icon { color: var(--ink); width: 4.4rem; height: 4.4rem; }
 .crisisHeading .icon svg { color: var(--terracotta); }
-.crisis h2 { font-size: clamp(1.4rem, 2.1vw, 2rem); margin-top: .6rem; letter-spacing: -.04em; }
+.crisis h2 { font-size: clamp(1.96rem, 2.94vw, 2.8rem); margin-top: .6rem; letter-spacing: -.04em; }
 .crisisInner > p { border-left: 1px solid var(--line); padding-left: 2rem; font-size: var(--font-size-body); line-height: 1.6; }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media(min-width: 1001px) {

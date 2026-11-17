@@ -142,11 +142,8 @@ export default function Home() {
               <div className="approach-art"><Image src={therapyThread} alt="" sizes="(max-width: 760px) 100vw, 435px" className="approach-mark" /></div>
               <h3 className="approach-title">Personzentrierte Psychotherapie</h3>
               <p>Bei der Personzentrierten Psychotherapie stehen Sie als Mensch im Mittelpunkt. Nicht nur Ihre Probleme oder eine Diagnose, sondern Ihre persönlichen Erfahrungen, Gefühle und Bedürfnisse bekommen Raum.</p>
-              <details className="approach-details">
-                <summary>Weiter lesen</summary>
-                <p>Die therapeutische Beziehung basiert auf Empathie, Wertschätzung und Echtheit. In einer vertrauensvollen Atmosphäre können Sie sich selbst besser verstehen, eigene Bedürfnisse wahrnehmen und neue Perspektiven entwickeln.</p>
-                <p>Die Personzentrierte Psychotherapie geht davon aus, dass jeder Mensch die Fähigkeit zur persönlichen Entwicklung in sich trägt. Therapie kann dabei einen geschützten Raum bieten, um Veränderungen im eigenen Tempo zu ermöglichen.</p>
-              </details>
+              <p>Die therapeutische Beziehung basiert auf Empathie, Wertschätzung und Echtheit. In einer vertrauensvollen Atmosphäre können Sie sich selbst besser verstehen, eigene Bedürfnisse wahrnehmen und neue Perspektiven entwickeln.</p>
+              <p>Die Personzentrierte Psychotherapie geht davon aus, dass jeder Mensch die Fähigkeit zur persönlichen Entwicklung in sich trägt. Therapie kann dabei einen geschützten Raum bieten, um Veränderungen im eigenen Tempo zu ermöglichen.</p>
             </div>
           </div>
           <div className="therapy-list">
