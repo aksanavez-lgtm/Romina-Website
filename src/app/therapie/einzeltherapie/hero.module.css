@@ -1,15 +1,16 @@
-.hero { position: relative; isolation: isolate; min-height: clamp(420px, 26vw, 520px); overflow: hidden; scroll-margin-top: var(--site-header-height); background: var(--sand); }
-.background { z-index: -2; left: auto !important; width: min(100%, 1600px) !important; object-fit: cover; object-position: right center; }
+.hero { --hero-base-height: clamp(420px, 26vw, 520px); position: relative; isolation: isolate; min-height: calc(var(--hero-base-height) * 1.2); margin-top: calc(var(--hero-base-height) * -.1); overflow: hidden; scroll-margin-top: var(--site-header-height); background: var(--sand); }
+.background { z-index: -2; left: 0 !important; width: 100% !important; object-fit: cover; object-position: right center; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, var(--sand), transparent 45%); }
 .copy { padding: 3.5rem 0; margin-left: max(var(--gutter), calc((100% - 1320px) / 2)); width: min(600px, 48%); color: var(--ink); }
 .copy h1 { font-family: var(--font-serif), Georgia, serif; font-size: clamp(2.8rem, 4.7488vw, 5rem); line-height: 1.12; letter-spacing: -.018em; }
 .copy h2 { margin-top: 1.25rem; font-family: var(--font-serif), Georgia, serif; font-size: clamp(1.7rem, 2.7vw, 2.65rem); font-weight: 400; line-height: 1.24; letter-spacing: -.014em; color: var(--terracotta); }
+.copy h1, .copy h2 { transform: translateY(1.75rem); }
 .copy h2 em { font-style: italic; }
-.copy p { margin-top: 1.95rem; font-size: var(--font-size-body); line-height: 1.45; max-width: 490px; }
+.copy p { margin-top: 1.95rem; font-size: var(--font-size-body); line-height: 1.45; max-width: 490px; transform: translateY(2.5rem); }
 .button { display: inline-flex; align-items: center; justify-content: center; margin-top: 1.75rem; min-height: 44px; padding: .9rem 2rem; border-radius: 2px; background: #687C93; color: #fff; font-size: .85rem; line-height: 1.4; text-transform: uppercase; }
 .button:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
 @media (max-width: 1000px) {
-  .hero { min-height: 500px; }
+  .hero { --hero-base-height: 500px; }
   .copy { padding-block: 3rem; width: 57%; }
   .copy h1 { font-size: clamp(2.8rem, 5.5vw, 3.5rem); }
   .copy h2 { font-size: clamp(1.65rem, 3.4vw, 2.2rem); margin-top: 1rem; }
@@ -17,8 +18,8 @@
   .button { margin-top: 1.75rem; padding: .8rem 1.8rem; }
 }
 @media (max-width: 600px) {
-  .hero { min-height: 680px; padding-bottom: 240px; }
-  .background { top: auto !important; height: 260px !important; object-position: right bottom; }
+  .hero { --hero-base-height: 680px; padding-bottom: 240px; }
+  .background { top: 0 !important; height: 100% !important; object-position: right center; }
   .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--sand) 0%, var(--sand) 58%, transparent 75%); }
   .copy { width: auto; margin-inline: var(--gutter); padding: 2.5rem 0 1rem; }
   .copy h1 { font-size: clamp(2.45rem, 10vw, 3.4rem); }

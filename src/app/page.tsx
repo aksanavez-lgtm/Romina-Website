@@ -3,7 +3,7 @@ import { ContactSection } from "@/components/contact-section";
 import { TherapyValues } from "@/components/therapy-values";
 import { FadeIn } from "@/components/fade-in";
 import Image from "next/image";
-import { Arrow, TextLink } from "@/components/design-elements";
+import { Arrow } from "@/components/design-elements";
 import landscapePhoto from "../../public/images/hero-landschaft.png";
 import therapyThread from "../../public/images/therapie-faden.png";
 import heroStyles from "./hero.module.css";
@@ -11,10 +11,10 @@ import portraitPhoto from "../../Romina_Foto-Uber-mich.png";
 import { therapyNavigation } from "@/components/therapy-navigation";
 
 const topics = [
-  { number: "01", label: "TRAUMA", title: <>Trauma & psychische<br />Belastungen</>, className: "topic-rose", items: ["Ängste & Panikattacken", "Depressionen & bipolare Störungen", "Posttraumatische Belastungsstörungen", "Zwänge, Ess- & Schlafstörungen"] },
-  { number: "02", label: "BEZIEHUNG", title: <>Beziehung<br />& Familie</>, className: "topic-sage", items: ["Paartherapie", "Familientherapie"] },
+  { number: "01", label: "TRAUMA", title: <>Trauma & psychische<br />Belastungen</>, className: "topic-rose", items: ["Ängste & Panikattacken", "Depressionen & bipolare Störungen", "Trauma & Traumafolgestörungen", "Posttraumatische Belastungsstörungen", "Zwänge, Ess- & Schlafstörungen"] },
+  { number: "02", label: "BEZIEHUNG", title: <>Beziehung<br />& Familie</>, className: "topic-sage", items: ["Paartherapie", "Familientherapie", "Beziehungskonflikte", "Trennung & Verlust", "Kommunikation & Vertrauen"] },
   { number: "03", label: "KRISEN", title: <>Krisen<br />& Verlust</>, className: "topic-blue", items: ["Lebenskrisen & Burnout", "Trauerbewältigung", "Sterbebegleitung"], note: "Auch suizidale Gedanken können in der Therapie angesprochen werden. Die Praxis ist kein Krisendienst." },
-  { number: "04", label: "ENTWICKLUNG", title: <>Entwicklung<br />& Sinn</>, className: "topic-sand", items: ["Sinnfindung & Spiritualität", "Selbsterfahrung für das Propädeutikum"] },
+  { number: "04", label: "ENTWICKLUNG", title: <>Entwicklung<br />& Sinn</>, className: "topic-sand", items: ["Sinnfindung & Spiritualität", "Persönliche Entwicklung & Selbstfindung", "Selbstwert & Selbstakzeptanz", "Lebensziele & Neuorientierung", "Selbsterfahrung für das Propädeutikum"] },
 ];
 
 const therapies = [
@@ -150,7 +150,6 @@ export default function Home() {
             {therapies.map((therapy, index) => (
               <a className="therapy-row" key={therapy.name} href={`/therapie/${therapyNavigation[index].slug}`}><span className="eyebrow">0{index + 1}</span><div><h3>{therapy.name}</h3><p>{therapy.text}</p></div></a>
             ))}
-            <div className="therapy-extra"><TextLink href="#kontakt">Zum Angebot anfragen</TextLink></div>
           </div>
         </section>
 

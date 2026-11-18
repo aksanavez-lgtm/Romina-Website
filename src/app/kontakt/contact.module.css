@@ -61,7 +61,9 @@
 .crisisHeading .icon { color: var(--ink); width: 4.4rem; height: 4.4rem; }
 .crisisHeading .icon svg { color: var(--terracotta); }
 .crisis h2 { font-size: clamp(1.96rem, 2.94vw, 2.8rem); margin-top: .6rem; letter-spacing: -.04em; }
-.crisisInner > p { border-left: 1px solid var(--line); padding-left: 2rem; font-size: var(--font-size-body); line-height: 1.6; }
+.crisis h2 em { letter-spacing: -.032em; }
+.crisisInner > p { position: relative; border-left: 1px solid transparent; padding-left: 2rem; font-size: var(--font-size-body); line-height: 1.6; }
+.crisisInner > p::before { content: ""; position: absolute; left: -1px; top: -1rem; bottom: -1rem; border-left: 1px solid var(--line); }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media(min-width: 1001px) {
   .photo { container-type: size; }
@@ -88,6 +90,7 @@
   .location + .location { padding-left: 1rem; }
   .crisisInner { grid-template-columns: 1fr; }
   .crisisInner > p { padding-left: 0; border-left: 0; }
+  .crisisInner > p::before { display: none; }
 }
 @media(max-width: 760px) {
   .hero { background-position: 62% top; }

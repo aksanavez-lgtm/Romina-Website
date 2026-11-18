@@ -3,7 +3,7 @@ import headingStyles from "./competencies-heading.module.css";
 import { Competencies } from "./competencies";
 import Image from "next/image";
 import { SiteFooter } from "@/components/site-footer";
-import background from "../../../../public/images/einzeltherapie-hero.png";
+import background from "../../../../public/images/einzeltherapie-hero-v1-photo.png";
 import room from "../../../../public/images/einzeltherapie-raum.webp";
 import sectionStyles from "./benefits.module.css";
 import styles from "./hero.module.css";
@@ -39,7 +39,10 @@ export default function TherapyPage() {
     <section className={`section ${headingStyles.section}`} aria-labelledby="competencies-title">
       <div className={`container ${headingStyles.grid}`}>
         <div className={`eyebrow ${headingStyles.label}`}><FadeIn rise>MEINE<br />KOMPETENZ-<br />BEREICHE</FadeIn></div>
-        <FadeIn><h2 id="competencies-title" className={headingStyles.title}>Schwerpunkte in<br />der <em>Einzeltherapie</em></h2></FadeIn>
+        <FadeIn>
+          <h2 id="competencies-title" className={headingStyles.title}>Schwerpunkte in<br />der <em>Einzeltherapie</em></h2>
+          <p className={headingStyles.statement}>Nicht alles, was uns prägt, muss uns für immer bestimmen. Veränderung<br />beginnt dort, wo wir den Mut finden, uns selbst zu begegnen.</p>
+        </FadeIn>
       </div>
     </section>
     <Competencies />
