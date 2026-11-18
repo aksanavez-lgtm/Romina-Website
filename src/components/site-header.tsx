@@ -89,12 +89,12 @@ export function SiteHeader() {
                   <summary className={styles.therapyTrigger} data-active={pathname.startsWith("/therapie/") || active === "#therapie"}>Therapie</summary>
                   <ul className={styles.therapyDropdown}>
                     {therapyNavigation.map((therapy) => (
-                      <li key={therapy.slug}><a href={`/therapie/${therapy.slug}`} onMouseDown={therapy.slug === "einzeltherapie" ? (event) => {
+                      <li key={therapy.slug}><a href={`/therapie/${therapy.slug}`} onMouseDown={(event) => {
                         if (event.button !== 0) return;
                         // Keep Safari's blur event from closing the dropdown before click.
                         event.preventDefault();
                         event.currentTarget.focus({ preventScroll: true });
-                      } : undefined} aria-current={pathname === `/therapie/${therapy.slug}` ? "page" : undefined} onClick={() => navigate(`/therapie/${therapy.slug}`)}>{therapy.title}</a></li>
+                      }} aria-current={pathname === `/therapie/${therapy.slug}` ? "page" : undefined} onClick={() => navigate(`/therapie/${therapy.slug}`)}>{therapy.title}</a></li>
                     ))}
                   </ul>
                 </details>

@@ -44,6 +44,10 @@ export default function TherapyPage() {
           <p className={headingStyles.statement}>Nicht alles, was uns prägt, muss uns für immer bestimmen. Veränderung<br />beginnt dort, wo wir den Mut finden, uns selbst zu begegnen.</p>
         </FadeIn>
       </div>
+      <a className={headingStyles.artwork} href="/kontakt" aria-label="Zur Kontaktseite">
+              <span className={headingStyles.brain}><Image src="/images/gehirn-herz-transparent.svg" alt="" width={280} height={280} unoptimized /></span>
+        <span className={headingStyles.arrow}><Image src="/images/kontakt-gehirn.png" alt="" width={1672} height={941} /></span>
+      </a>
     </section>
     <Competencies />
   </main><SiteFooter /></>;

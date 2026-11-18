@@ -33,8 +33,80 @@
   color: var(--ink);
 }
 
+.artwork {
+  position: absolute;
+  top: calc(50% + clamp(.8rem, 1.1vw, 1.1rem));
+  right: max(var(--gutter), calc((100% - 1320px) / 2));
+  width: clamp(13rem, 18vw, 18rem);
+  display: grid;
+  justify-items: center;
+  transform: translateY(-50%);
+}
+
+.artwork::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  bottom: -1rem;
+  left: -2rem;
+  border-left: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.brain {
+  position: relative;
+  display: block;
+  width: 78%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.brain img {
+  position: absolute;
+  top: -15.025%;
+  left: -15.025%;
+  width: 130.05%;
+  max-width: none;
+  height: auto;
+}
+
+.arrow {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1672 / 545.6;
+  margin-top: .5rem;
+  overflow: hidden;
+  transform: scale(1.15);
+  transform-origin: center top;
+}
+
+.arrow img {
+  position: absolute;
+  bottom: 0;
+  left: -33%;
+  width: 160%;
+  max-width: none;
+  height: auto;
+}
+
 @media (max-width: 1000px) {
   .grid { grid-template-columns: 1fr 3fr; gap: 2rem; }
+  .artwork {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(18rem, calc(100% - var(--gutter) * 2));
+    margin: 2rem auto 0;
+    transform: none;
+  }
+  .artwork::before {
+    top: -1rem;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+    border-left: 0;
+  }
 }
 
 @media (max-width: 760px) {
